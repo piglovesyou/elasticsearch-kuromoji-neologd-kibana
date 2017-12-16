@@ -1,0 +1,24 @@
+version: '2'
+services:
+  elasticsearch:
+    build: es
+    volumes:
+        - es-data:/usr/share/elasticsearch/data
+        - ./es/config:/usr/share/elasticsearch/config
+    ports:
+        - 9200:9200
+    # Since it crushes with 2GB Mac default memory
+    environment:
+      ES_JAVA_OPTS: "-Xms750m -Xmx750m"
+    expose:
+        - 9300
+  kibana:
+    build: kibana
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    ports:
+        - 5601:5601
+
+volumes:
+    es-data:
+        driver: local
