@@ -10,8 +10,6 @@ services:
     # Since it crushes with 2GB Mac default memory
     environment:
       ES_JAVA_OPTS: "-Xms750m -Xmx750m"
-    expose:
-        - 9300
   kibana:
     build: kibana
     environment:
