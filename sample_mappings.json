@@ -11,7 +11,7 @@
               "type": "text",
               "boost": 3,
               "fielddata": true,
-              "analyzer": "kuromoji_neologd"
+              "analyzer": "ja_neologd_analyzer"
             }
           }
         },
@@ -21,7 +21,7 @@
             "ja": {
               "type": "text",
               "fielddata": true,
-              "analyzer": "kuromoji_neologd"
+              "analyzer": "ja_neologd_analyzer"
             }
           }
         }
