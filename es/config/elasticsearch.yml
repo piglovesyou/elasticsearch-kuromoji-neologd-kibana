@@ -9,3 +9,7 @@ xpack.security.enabled: false
 xpack.monitoring.enabled: true
 xpack.graph.enabled: false
 xpack.watcher.enabled: false
+# https://discuss.elastic.co/t/errors-after-installing-x-pack/64210/7
+xpack.monitoring.exporters.my_local:
+  type: local
+  use_ingest: false
